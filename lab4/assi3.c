@@ -1,6 +1,5 @@
-#include<bits/stdc++.h>
-
-using namespace std;
+#include<stdio.h>
+#include<stdlib.h>
 
 struct symbol{
     int aValue;
@@ -73,11 +72,11 @@ int main(void){
                 int k = 0;
                 while(c1 != ']'){
 
-                    sym[j].datatype[k] = c1;
+                    sym[0].datatype[k] = c;
                     k++;
                     c = c1;
                     c1 = fgetc(p1);
-                    //printf("%c",sym[j].datatype[k]);
+                    printf("%c",sym[0].datatype[k]);
                 }
             }
             else if(c1 == 'i'){
@@ -102,8 +101,12 @@ int main(void){
     }
     fclose(p1);
     int r;
-    cout << sym[0].datatype;
+    for(r=0;i<sizeof(sym);i++){
+        printf("%d", sym[r].aValue);
+    }
+
     printf("\n\n");
 
+    return 0;
 }
 
